@@ -48,6 +48,8 @@ class SimpleEmbodimentEnvSpec(EnvSpec, ABC):
                    if k in SIMPLE_KEYBOARD_ACTION
                ] + [
                    handlers.CameraAction()
+               ] + [
+                   handlers.ChatAction()
                ]
 
     def create_monitors(self) -> List[TranslationHandler]:
