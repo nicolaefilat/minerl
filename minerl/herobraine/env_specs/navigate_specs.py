@@ -18,7 +18,8 @@ class Navigate(SimpleEmbodimentEnvSpec):
     def __init__(self, dense, extreme, *args, **kwargs):
         suffix = 'Extreme' if extreme else ''
         suffix += 'Dense' if dense else ''
-        name = 'MineRLNavigate{}-v0'.format(suffix)
+        sfx = kwargs.pop('sfx', '')
+        name = 'MineRLNavigate{}{}-v0'.format(suffix, sfx)
         self.dense, self.extreme = dense, extreme
         super().__init__(name, *args, max_episode_steps=6000, **kwargs)
 

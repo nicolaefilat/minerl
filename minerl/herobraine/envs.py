@@ -8,6 +8,7 @@ import gym
 from minerl.herobraine.env_spec import EnvSpec
 from minerl.herobraine.env_specs.treechop_specs import Treechop
 from minerl.herobraine.env_specs.navigate_specs import Navigate
+from minerl.herobraine.env_specs.navigate_specs_prog_synthesis import NavigateProgSynthesis
 from minerl.herobraine.env_specs.obtain_specs import ObtainDiamond, ObtainDiamondSurvival, ObtainIronPickaxe, Obtain, \
     ObtainDiamondDebug
 from minerl.herobraine.env_specs import basalt_specs
@@ -23,6 +24,9 @@ MINERL_NAVIGATE_V0 = Navigate(dense=False, extreme=False)
 MINERL_NAVIGATE_EXTREME_V0 = Navigate(dense=False, extreme=True)
 MINERL_NAVIGATE_DENSE_V0 = Navigate(dense=True, extreme=False)
 MINERL_NAVIGATE_DENSE_EXTREME_V0 = Navigate(dense=True, extreme=True)
+
+MINERL_NAVIGATE_DENSE_PROG_SYNTHESIS_V0 = NavigateProgSynthesis(dense=True, extreme=False)
+MINERL_NAVIGATE_DENSE_EXTREME_PROG_SYNTHESIS_V0 = NavigateProgSynthesis(dense=True, extreme=True)
 
 MINERL_OBTAIN_DIAMOND_V0 = ObtainDiamond(dense=False)
 MINERL_OBTAIN_DIAMOND_DENSE_V0 = ObtainDiamond(dense=True)
