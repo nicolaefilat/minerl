@@ -10,7 +10,7 @@ from typing import List
 import minerl.herobraine
 import minerl.herobraine.hero.handlers as handlers
 
-NAVIGATE_STEPS = 6000
+NAVIGATE_STEPS = 999999999
 
 
 class Navigate(SimpleEmbodimentEnvSpec):
@@ -21,7 +21,7 @@ class Navigate(SimpleEmbodimentEnvSpec):
         sfx = kwargs.pop('sfx', '')
         name = 'MineRLNavigate{}{}-v0'.format(suffix, sfx)
         self.dense, self.extreme = dense, extreme
-        super().__init__(name, *args, max_episode_steps=6000, **kwargs)
+        super().__init__(name, *args, max_episode_steps=NAVIGATE_STEPS, **kwargs)
 
     def is_from_folder(self, folder: str) -> bool:
         return folder == 'navigateextreme' if self.extreme else folder == 'navigate'
@@ -79,7 +79,7 @@ class Navigate(SimpleEmbodimentEnvSpec):
 
     def create_server_quit_producers(self) -> List[Handler]:
         return [
-            handlers.ServerQuitFromTimeUp(NAVIGATE_STEPS * MS_PER_STEP),
+            # handlers.ServerQuitFromTimeUp(NAVIGATE_STEPS * MS_PER_STEP),
             handlers.ServerQuitWhenAnyAgentFinishes()
         ]
 
