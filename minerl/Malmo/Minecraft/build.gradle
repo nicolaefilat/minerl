@@ -2,8 +2,9 @@
 buildscript {
     repositories {
 
-        maven { url 'https://jitpack.io' }
-        jcenter()
+        maven{ url 'https://maven.aliyun.com/repository/central' }
+        maven{ url 'https://maven.aliyun.com/repository/public' }
+        maven{ url 'https://maven.aliyun.com/repository/gradle-plugin'}
         mavenCentral()
         maven {
             name = "forge"
@@ -83,11 +84,9 @@ runClient {
 }
 
 repositories {
-    maven {
-        name = "SpongePowered Repo"
-        url = "https://repo.spongepowered.org/maven/"
-    }
-    maven { url 'https://jitpack.io' }
+    maven{ url 'https://maven.aliyun.com/repository/central' }
+    maven{ url 'https://maven.aliyun.com/repository/public' }
+    maven{ url 'https://maven.aliyun.com/repository/gradle-plugin'}
 }
 
 // Add the overclocking plugin to the manifest so that it is loaded when running in a non-dev environment (eg from the launcher)
